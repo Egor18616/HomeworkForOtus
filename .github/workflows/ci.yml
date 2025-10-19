@@ -1,0 +1,15 @@
+name: Homework for OTUS
+
+on:
+  push:
+    branches:
+      - [ main ]
+
+jobs:
+  thisisjobs:
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Show date
+      run: date
