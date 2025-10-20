@@ -1,15 +1,22 @@
-#name: Homework for OTUS
-#
-#on:
-#  push:
-#    branches:
-#      - [ main ]
-#
-#jobs:
-#  thisisjobs:
-#    steps:
-#    - name: Checkout code
-#      uses: actions/checkout@v3
-#
-#    - name: Show date
-#      run: date
+name: CI for Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.5'
+
+    - name: Run tests
+      run: python tests.py
