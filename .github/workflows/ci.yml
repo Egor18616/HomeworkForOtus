@@ -20,4 +20,4 @@ jobs:
         python-version: '3.14.0'
 
     - name: Run tests
-      run: python tests.py
+      run: python quadratic_equation_tests.py
